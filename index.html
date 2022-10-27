@@ -1,62 +1,178 @@
 <!DOCTYPE html>
 <html>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
- 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.js">
+<head>
+	<title>animation</title>
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+	<style type="text/css">
+	/*	.lds-circle {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+.lds-circle > div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  background: red;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}*/
+/*.loader{
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 200px;
+    background: #fff;
+    border:2px solid #fff;
+    color: red;
+    overflow: hidden;
+  }
+  .loader::before{
+    content: '';
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    animation: loading 10s linear infinite;
+  }
+  .loader:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(0,255,255);
+    mix-blend-mode: difference;
+    animation: percentage 10s linear infinite;
+  }
+  
+  @keyframes loading {
+    0% { width: 0 }
+    100% { width: 100% }
+  }
+  @keyframes percentage {
+    0% { content: "0%"}
+    5% { content: "5%"}
+    10% { content: "10%"}
+    20% { content: "20%"}
+    30% { content: "30%"}
+    40% { content: "40%"}
+    50% { content: "50%"}
+    60% { content: "60%"}
+    70% { content: "70%"}
+    80% { content: "80%"}
+    90% { content: "90%"}
+    95% { content: "95%"}
+    96% { content: "96%"}
+    97% { content: "97%"}
+    98% { content: "98%"}
+    99% { content: "99%"}
+    100% { content: "100%"}
+  }
+  */
+  .loader {
+        transform: rotateZ(45deg);
+        perspective: 1000px;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        color: #fff;
+      }
+        .loader:before,
+        .loader:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: inherit;
+          height: inherit;
+          border-radius: 50%;
+          transform: rotateX(70deg);
+          animation: 1s spin linear infinite;
+        }
+        .loader:after {
+          color: #FF3D00;
+          transform: rotateY(70deg);
+          animation-delay: .4s;
+        }
+
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotateZ(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotateZ(360deg);
+        }
+      }
+
+      @keyframes rotateccw {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(-360deg);
+        }
+      }
+
+      @keyframes spin {
+        0%,
+        100% {
+          box-shadow: .2em 0px 0 0px currentcolor;
+        }
+        12% {
+          box-shadow: .2em .2em 0 0 currentcolor;
+        }
+        25% {
+          box-shadow: 0 .2em 0 0px currentcolor;
+        }
+        37% {
+          box-shadow: -.2em .2em 0 0 currentcolor;
+        }
+        50% {
+          box-shadow: -.2em 0 0 0 currentcolor;
+        }
+        62% {
+          box-shadow: -.2em -.2em 0 0 currentcolor;
+        }
+        75% {
+          box-shadow: 0px -.2em 0 0 currentcolor;
+        }
+        87% {
+          box-shadow: .2em -.2em 0 0 currentcolor;
+        }
+      }
+
+	</style>
 </head>
-<body style="background-color: lightblue;">
-<h1 style="text-align: center;" class="jumbotron">Futbol news<i class="fa fa-futbol-o"></i></h1>
-<h2 style="text-align: center;">Kechagi uchrashuvlar natijasi:
-</h2>
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<div class="card" style="width: 300px;">
-				<img class="card-img-top" src="0.1.jpg" style="width: 100%;">
-
-<div class="card-body">
-	<h4 class="card-title">Mallorca 0 : 1 Barcelona</h4>
-			</div>
-		</div>
-	</div>
-		<div class="col">
-			<div class="card" style="width: 300px;">
-				<img class="card-img-top" src="1.1.jpg" style="width: 100%;">
-
-<div class="card-body">
-	<h4 class="card-title">Real Madrid 1 : 1 Osasuna</h4>
-			</div>
-		</div>
-	</div>
-		<div class="col">
-			<div class="card" style="width: 300px;">
-				<img class="card-img-top" src="6.3.jpg" style="width: 100%;">
-
-<div class="card-body">
-	<h4 class="card-title">Mun City 6 : 3 Mun United</h4>
-			</div>
-		</div>
+<body style="background-color: lightblue">
+	<!-- <div class="lds-circle"><div></div></div> -->
+<span class="loader"></span>
 </div>
-</div></div>
-<br><br><hr>
-<h1 style="text-align: center;">Turnir jadval</h1>
-<div class="row bg-secondary" style="width: 100%">
-		<div class="col bg-white border">
-			<h2>La Liga turnir jadvali</h2>
-			<img src="laliga.jpg" width="200" height="200">
-		</div>
-		<div class="col bg-white border">
-			<h2>Apl turnir jadvali</h2>
-			<img src="apl.jpg" width="200" height="200">
-		</div>
-	</div><hr>
-	<h1 style="text-align: center;">To'purarlar ro'yhati</h1>
-    <div>
-    	<h2>La Liga</h2>
-    	<h2 style="text-align: right;">APL</h2>
-    	<img src="laliga1.jpg" width="400" height="450">
-    	<img style="float: right;" src="apl1.jpg" width="400" height="450">
-    </div><br><br><br>
+<h1 class="animate__animated animate__jello">001mxm</h1>
 </body>
 </html>
